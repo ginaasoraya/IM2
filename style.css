@@ -94,36 +94,29 @@ img {
   overflow: hidden;
 }
 
-
-
 #searchInput,
-#searchInput + button {
+#searchInput + button:hover {
     display: block;
-    margin-top: 10px; /* Füge einen Abstand unterhalb des Headers hinzu */
+    transition: all .3s;
+    background-color: #fff;
+    color: #EA3546;
 }
-
-/* Positioniere die Suchleiste rechts */
 #searchInput {
     float: right;
-    padding: 5px; /* Innenabstand für das Suchfeld */
-    margin-right: 20px; /* Füge einen Abstand vom rechten Rand hinzu */
-    width: 200px; /* Begrenze die Breite des Suchfeldes */
-
+    padding: 5px;
+    margin-right: 20px; 
+    width: 200px; 
 }
-
-/* Optional: Stilisierung der Schaltfläche */
 #searchInput + button {
     float: right;
-    margin-right: 20px; /* Füge einen Abstand vom rechten Rand hinzu */
+    margin-right: 20px;
     padding: 5px 10px;
-    background-color: #e75e8d;
+    background-color: #EA3546;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
-
-/* Optional: Stilisierung des Platzhalters im Suchfeld */
 #searchInput::placeholder {
     color: #999;
 }
@@ -135,7 +128,7 @@ Global Styles
 */
 html,
 body {
-  background: #228bb1;
+  background: #F9C80E;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -154,12 +147,12 @@ p {
 }
 
 ::selection {
-  background: #e75e8d;
+  background: #EA3546;
   color: #fff;
 }
 
 ::-moz-selection {
-  background: #e75e8d;
+  background: #EA3546;
   color: #fff;
 }
 
@@ -171,7 +164,7 @@ p {
 .main-button a {
   font-size: 14px;
   color: #fff;
-  background-color: #e75e8d;
+  background-color: #EA3546;
   padding: 12px 30px;
   display: inline-block;
   border-radius: 25px;
@@ -185,14 +178,14 @@ p {
 
 .main-button a:hover {
   background-color: #fff;
-  color: #e75e8d;
+  color: #EA3546;
 }
 
 .main-border-button a {
   font-size: 14px;
-  color: #ec6090;
+  color: #EA3546;
   background-color: transparent;
-  border: 1px solid #ec6090;
+  border: 1px solid #EA3546;
   padding: 12px 30px;
   display: inline-block;
   border-radius: 25px;
@@ -207,7 +200,7 @@ p {
 .main-border-button a:hover {
   border-color: #fff;
   background-color: #fff;
-  color: #e75e8d;
+  color: #EA3546;
 }
 
 .border-no-active a {
@@ -226,7 +219,7 @@ section {
 }
 
 .heading-section h4 {
-  color: #ec6090;
+  color: #EA3546;
   font-size: 34px;
   text-decoration: none;
   margin-bottom: 30px;
@@ -311,7 +304,7 @@ Pre-loader Style
   height: 16px;
   top: 12px;
   left: 15px;
-  background: #e75e8d;
+  background: #EA3546;
   border-radius: 50%;
   -webkit-transform: translateX(0);
   transform: translateX(0);
@@ -334,7 +327,7 @@ Pre-loader Style
   width: 16px;
   height: 16px;
   margin-left: 16px;
-  background: #e75e8d;
+  background: #EA3546;
   border-radius: 50%;
 }
 
@@ -407,7 +400,7 @@ Most Popular Style
 }
 
 .most-popular .item ul li:last-child i {
-  color: #ec6090;
+  color: #EA3546;
 }
 
 .most-popular .main-button {
@@ -427,3 +420,49 @@ TemplateMo 579 Cyborg Gaming
 https://templatemo.com/tm-579-cyborg-gaming
 
 */
+
+.team-button {
+  font-size: 14px;
+  color: #fff;
+  background-color: #EA3546;
+  padding: 8px 20px;
+  display: inline-block;
+  border-radius: 25px;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.team-button:hover {
+  background-color: #fff;
+  color: #EA3546;
+}
+.heading-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.heading-section h4 {
+  margin: 0;
+}
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.team-button-box {
+  margin-left: auto;
+}
+
+.team-button {
+  margin-left: 20px;
+}

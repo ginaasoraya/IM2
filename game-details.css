@@ -1,0 +1,175 @@
+/* 
+---------------------------------------------
+font & reset css
+--------------------------------------------- 
+*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900");
+
+/* 
+---------------------------------------------
+Global Styles
+--------------------------------------------- 
+*/
+html,
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: #F9C80E;
+  color: #fff;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: #CCC;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: #F99;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+p {
+  font-size: 15px;
+  line-height: 30px;
+  margin-bottom: 0;
+}
+
+img {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 
+---------------------------------------------
+Game Details Style
+--------------------------------------------- 
+*/
+#game-details {
+  margin-top: 110px;
+  background-color: #1f2122;
+  padding: 60px;
+}
+
+#game-details p, 
+#game-details ul {
+  color: #fff;
+  background-color: #7a0b1a;
+  padding: 20px;
+}
+
+#game-details ul {
+  margin-top: 20px;
+}
+
+#game-details img {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+/* 
+---------------------------------------------
+Title Box Style
+--------------------------------------------- 
+*/
+.title-box {
+  background-color: #000;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.title-box h1 {
+  color: #fff;
+}
+
+/* 
+---------------------------------------------
+Button Style
+--------------------------------------------- 
+*/
+.main-button a, .main-border-button a {
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  padding: 12px 30px;
+  display: inline-block;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-button a {
+  color: #fff;
+  background-color: #e75e8d;
+  border-radius: 25px;
+}
+
+.main-button a:hover {
+  background-color: #fff;
+  color: #e75e8d;
+}
+
+.main-border-button a {
+  color: #ec6090;
+  background-color: transparent;
+  border: 1px solid #ec6090;
+}
+
+.main-border-button a:hover {
+  border-color: #fff;
+  background-color: #fff;
+  color: #e75e8d;
+}
+
+.border-no-active a {
+  border-color: #666;
+  color: #666;
+}
+
+.border-no-active a:hover {
+  border-color: #cf1b1b;
+  color: #666;
+  background-color: transparent;
+}
+
+.back-button {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.back-button a {
+    font-size: 16px;
+    color: #fff; /* Anpassung an die Textfarbe der Hauptseite */
+    background-color: #EA3546; /* Anpassung an die Akzentfarbe der Hauptseite */
+    padding: 12px 30px;
+    display: inline-block;
+    border-radius: 25px;
+    font-weight: 400;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.back-button a:hover {
+    background-color: #fff; /* Anpassung an die Hover-Farbe der Hauptseite */
+    color: #EA3546; /* Anpassung an die Hover-Farbe der Hauptseite */
+}

@@ -2,71 +2,77 @@
 <html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Gamevault</title>
 
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <title>Gamevault</title>
-
-
-
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
-  <!-- Additional CSS Files -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./style.css">
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
-    
-
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader loaded">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="most-popular">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="heading-section">
-                <h4><em>Welcome to</em> Gamehalt</h4>
-              </div>
-              <div class="row gameList">
-                
-                <input type="text" id="searchInput" placeholder="Suche nach Spielen...">
-<button onclick="searchGames()">Suchen</button>
-              </div>
-              <div class="col-lg-12">
-                <div class="main-button hidden">
-                  <a href="javascript:void(0)">Load More Games</a>
-                </div>
-              </div>
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader loaded">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
+    <!-- ***** Preloader End ***** -->
 
-  <script src="prod.env.js"></script>
-  <script src="script.js"></script>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="most-popular">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="heading-section">
+                                <h4><em>Welcome to</em> Gamevault</h4>
+                                <div class="team-button-box">
+                                    <a href="team.html" class="team-button">Unser Team</a>
+                                </div>
+                            </div>
+                            <div class="search-bar">
+                                <input type="text" id="searchInput" placeholder="Suche nach Spielen...">
+                                <button id="searchButton">Suchen</button>
+                                <!-- Dropdown-Liste für Bewertung -->
+                                <select id="ratingDropdown">
+                                    <option value="all">Alle Bewertungen</option>
+                                    <option value="4">Über 4</option>
+                                    <option value="3">Über 3</option>
+                                    <option value="2">Über 2</option>
+                                    <option value="1">Über 1</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Spieleliste -->
+                    <div class="row gameList"></div>
+                    <!-- Load More Games Button -->
+                    <div class="col-lg-12 text-center">
+                        <div class="main-button hidden">
+                            <a href="javascript:void(0)" id="loadMoreButton" class="main-button-link">Load More Games</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="prod.env.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

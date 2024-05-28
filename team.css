@@ -1,0 +1,78 @@
+body{ 
+    background-color: #F9C80E
+}
+
+.team-page-content {
+    margin-top: 110px;
+    background-color: #27292a; /* Anpassung an die Hintergrundfarbe der Hauptseite */
+    padding: 60px;
+    border-radius: 23px;
+}
+
+.team-page-content h1 {
+    color: #EA3546; /* Anpassung an die Akzentfarbe der Hauptseite */
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.team-member {
+    background-color: #1f2122; /* Anpassung an die Sekundärfarbe der Hauptseite */
+    padding: 30px;
+    border-radius: 23px;
+    margin-bottom: 30px;
+}
+
+.team-member img {
+    border-radius: 50%;
+    max-width: 200px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.team-member h3 {
+    color: #EA3546; /* Anpassung an die Akzentfarbe der Hauptseite */
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    color: #fff; /* Anpassung an die Textfarbe der Hauptseite */
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center; /* Zentrieren des Textes */
+}
+
+.team-member .position, .team-member .email {
+    color: #fff; /* Anpassung an die Textfarbe der Hauptseite */
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.back-button {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.back-button a {
+    font-size: 16px;
+    color: #fff; /* Anpassung an die Textfarbe der Hauptseite */
+    background-color: #EA3546; /* Anpassung an die Akzentfarbe der Hauptseite */
+    padding: 12px 30px;
+    display: inline-block;
+    border-radius: 25px;
+    font-weight: 400;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.back-button a:hover {
+    background-color: #fff; /* Anpassung an die Hover-Farbe der Hauptseite */
+    color: #EA3546; /* Anpassung an die Hover-Farbe der Hauptseite */
+}
