@@ -7,6 +7,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const ratingDropdown = document.getElementById("ratingDropdown");
     let nextGameListUrl = null;
 
+    console.log("gameList:", gameList);
+    console.log("loaderEl:", loaderEl);
+    console.log("loadMoreGamesBtn:", loadMoreGamesBtn);
+    console.log("searchInput:", searchInput);
+    console.log("searchButton:", searchButton);
+    console.log("ratingDropdown:", ratingDropdown);
+
+    if (!gameList || !loaderEl || !loadMoreGamesBtn || !searchInput || !searchButton || !ratingDropdown) {
+        console.error("Ein oder mehrere benötigte DOM-Elemente wurden nicht gefunden.");
+        return;
+    }
+
     const APIKEY = "1818ea3bd3e2460da268a13c7c0d7292"; // Ersetzen Sie dies durch Ihren tatsächlichen API-Schlüssel
     let url = `https://api.rawg.io/api/games?key=${APIKEY}&dates=2022-01-01,2022-12-31&ordering=-added&page_size=50`; // 20 Spiele beim ersten Laden
 
@@ -38,7 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function loadGames(apiUrl = url) {
-        loaderEl.classList.remove("loaded");
+        if (loaderEl) {
+            loaderEl.classList.remove("loaded");
+        }
 
         fetch(apiUrl)
             .then(response => {
@@ -67,7 +81,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     gameList.insertAdjacentHTML("beforeend", gameItemEl);
                 });
 
-                loaderEl.classList.add("loaded");
+                if (loaderEl) {
+                    loaderEl.classList.add("loaded");
+                }
 
                 if (nextGameListUrl) {
                     loadMoreGamesBtn.parentElement.classList.remove("hidden");
@@ -79,13 +95,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.querySelectorAll('.item').forEach(item => {
                     item.addEventListener('click', function () {
                         const gameId = this.getAttribute('data-game-id');
-                        window.location.href = `game-details.html?gameId=${gameId}`;
+                        if (gameId) {
+                            window.location.href = `game-details.html?gameId=${gameId}`;
+                        } else {
+                            console.error("Fehler: Spiel-ID nicht gefunden");
+                        }
                     });
                 });
             })
             .catch(error => {
                 console.error("Ein Fehler ist aufgetreten:", error);
-                loaderEl.classList.add("loaded");
+                if (loaderEl) {
+                    loaderEl.classList.add("loaded");
+                }
                 alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.");
             });
     }

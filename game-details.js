@@ -1,42 +1,56 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const gameDetailsEl = document.getElementById("game-details");
-    const backButtonEl = document.getElementById("back-button");
-    const APIKEY = "1818ea3bd3e2460da268a13c7c0d7292"; // Ersetzen Sie dies durch Ihren tatsächlichen API-Schlüssel
-  
-    const urlParams = new URLSearchParams(window.location.search);
-    const gameId = urlParams.get('gameId');
-  
-    if (gameId) {
-      const gameDetailsUrl = `https://api.rawg.io/api/games/${gameId}?key=${APIKEY}`;
-  
-      fetch(gameDetailsUrl)
-        .then(response => response.json())
-        .then(game => {
-          const gameDetailsHTML = `
-            <h1>${game.name}</h1>
-            <img src="${game.background_image}" alt="${game.name}">
-            <p>${game.description}</p>
-            <ul>
-              <li>Released: ${game.released}</li>
-              <li>Rating: ${game.rating}</li>
-              <li>Platforms: ${game.platforms.map(p => p.platform.name).join(', ')}</li>
-            </ul>
-            <div>
-            ${game.short_screenshots ? game.short_screenshots.map(screenshot => `<img src="${screenshot.image}" alt="Screenshot">`).join('') : ''}
-            </div>
-          `;
-          
-          gameDetailsEl.innerHTML = gameDetailsHTML;
+    const loaderEl = document.getElementById("js-preloader");
+    const gameId = new URLSearchParams(window.location.search).get("gameId");
 
-          // Zurück-Button hinzufügen
-          const previousUrl = document.referrer; // Zugriff auf die vorherige URL
-          backButtonEl.setAttribute('href', previousUrl); // Setzen Sie den Link des Zurück-Buttons auf die vorherige URL
-        })
-        .catch(error => {
-          console.error("Ein Fehler ist aufgetreten:", error);
-          gameDetailsEl.innerHTML = "<p>Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.</p>";
-        });
-    } else {
-      gameDetailsEl.innerHTML = "<p>Kein Spiel ausgewählt.</p>";
+    if (!gameId) {
+        console.error("Fehler: Spiel-ID nicht gefunden.");
+        return;
     }
-  });
+
+    const APIKEY = "1818ea3bd3e2460da268a13c7c0d7292"; // Ersetzen Sie dies durch Ihren tatsächlichen API-Schlüssel
+    const url = `https://api.rawg.io/api/games/${gameId}?key=${APIKEY}`;
+
+    function loadGameDetails(apiUrl) {
+        if (loaderEl) {
+            loaderEl.classList.remove("loaded");
+        }
+
+        fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Netzwerkantwort war nicht ok.');
+                }
+                return response.json();
+            })
+            .then(game => {
+                const gameTitleEl = document.querySelector(".game-title");
+                const gameDescriptionEl = document.querySelector(".game-description");
+                const gameReleaseDateEl = document.querySelector(".game-release-date");
+                const gameRatingEl = document.querySelector(".game-rating");
+                const gamePlatformsEl = document.querySelector(".game-platforms");
+                const gameImageEl = document.querySelector(".game-image");
+
+                if (gameTitleEl) gameTitleEl.textContent = game.name;
+                if (gameDescriptionEl) gameDescriptionEl.innerHTML = game.description_raw; // `description_raw` is more suitable for text content
+                if (gameReleaseDateEl) gameReleaseDateEl.textContent = game.released;
+                if (gameRatingEl) gameRatingEl.textContent = game.rating;
+                if (gamePlatformsEl) gamePlatformsEl.textContent = game.parent_platforms.map(pl => pl.platform.name).join(", ");
+                if (gameImageEl) gameImageEl.setAttribute('src', game.background_image);
+                if (gameImageEl) gameImageEl.setAttribute('alt', `${game.name} image`);
+
+                if (loaderEl) {
+                    loaderEl.classList.add("loaded");
+                }
+            })
+            .catch(error => {
+                console.error("Ein Fehler ist aufgetreten:", error);
+                if (loaderEl) {
+                    loaderEl.classList.add("loaded");
+                }
+                alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.");
+            });
+    }
+
+    // Initiales Laden der Spieldetails
+    loadGameDetails(url);
+});
