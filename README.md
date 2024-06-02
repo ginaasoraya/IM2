@@ -1,7 +1,7 @@
 
 ## Projektbeschreibung
 
-### Kurzbeschreibung des Projekts (500 Zeichen)
+### Kurzbeschreibung des Projekts
 
 Dieses Projekt ist eine Webanwendung zur Anzeige und Filterung von Videospielen, die im Jahr 2022 veröffentlicht wurden. Die Hauptseite listet die Spiele mit wichtigen Informationen wie Name, Plattformen, Bewertungen und Erscheinungsdatum. Benutzer können Spiele nach Bewertung filtern und nach bestimmten Titeln suchen. Zusätzlich gibt es eine Team-Seite, auf der die Mitglieder des Projektteams mit Namen, Bildern und kurzen Beschreibungen vorgestellt werden. Das Ziel des Projekts ist es, eine benutzerfreundliche und ansprechende Plattform für Gaming-Enthusiasten zu schaffen. WICHTIG: Filter und Suchfunktion funktioniert nur bei bereits geladenen Spielen, da die API sonst zulange braucht um diese zu Filtern.
 
